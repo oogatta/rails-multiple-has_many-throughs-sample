@@ -46,7 +46,6 @@
     <index id="20" parent="6" name="sqlite_autoindex_ar_internal_metadata_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>key</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="21" parent="6">
@@ -82,7 +81,6 @@
     <index id="27" parent="8" name="sqlite_autoindex_schema_migrations_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="28" parent="8">
@@ -144,11 +142,9 @@
     </column>
     <index id="41" parent="11" name="index_team_users_on_team_id">
       <ColNames>team_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="42" parent="11" name="index_team_users_on_user_id">
       <ColNames>user_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="43" parent="11">
       <ColNames>id</ColNames>
@@ -212,11 +208,9 @@
     </column>
     <index id="55" parent="13" name="index_user_posts_on_user_id">
       <ColNames>user_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="56" parent="13" name="index_user_posts_on_post_id">
       <ColNames>post_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="57" parent="13">
       <ColNames>id</ColNames>
@@ -260,11 +254,9 @@
     </column>
     <index id="65" parent="14" name="index_user_users_on_hoge_id">
       <ColNames>hoge_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="66" parent="14" name="index_user_users_on_fuga_id">
       <ColNames>fuga_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="67" parent="14">
       <ColNames>id</ColNames>
