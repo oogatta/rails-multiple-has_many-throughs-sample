@@ -2,9 +2,9 @@ class User < ApplicationRecord
   has_many :user_posts
   has_many :posts, through: :user_posts
 
-  has_many :hoge_fugas, foreign_key: 'hoge_id', class_name: 'UserUser'
-  has_many :fugas, through: :hoge_fugas, foreign_key: 'fuga_id'
+  has_many :follower_followees, foreign_key: 'follower_id', class_name: 'FollowerFollowee'
+  has_many :followees, through: :follower_followees, foreign_key: 'followee_id'
 
-  has_many :fuga_hoges, foreign_key: 'fuga_id', class_name: 'UserUser'
-  has_many :hoges, through: :fuga_hoges, foreign_key: 'hoge_id'
+  has_many :followee_followers, foreign_key: 'followee_id', class_name: 'FollowerFollowee'
+  has_many :followers, through: :followee_followers, foreign_key: 'follower_id'
 end

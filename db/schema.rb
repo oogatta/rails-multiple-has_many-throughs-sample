@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_26_083842) do
+ActiveRecord::Schema.define(version: 2019_12_26_112834) do
+
+  create_table "follower_followees", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "followee_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["followee_id"], name: "index_follower_followees_on_followee_id"
+    t.index ["follower_id"], name: "index_follower_followees_on_follower_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -40,24 +49,15 @@ ActiveRecord::Schema.define(version: 2019_12_26_083842) do
     t.index ["user_id"], name: "index_user_posts_on_user_id"
   end
 
-  create_table "user_users", force: :cascade do |t|
-    t.integer "hoge_id", null: false
-    t.integer "fuga_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["fuga_id"], name: "index_user_users_on_fuga_id"
-    t.index ["hoge_id"], name: "index_user_users_on_hoge_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "follower_followees", "users", column: "followee_id"
+  add_foreign_key "follower_followees", "users", column: "follower_id"
   add_foreign_key "team_users", "teams"
   add_foreign_key "team_users", "users"
   add_foreign_key "user_posts", "posts"
   add_foreign_key "user_posts", "users"
-  add_foreign_key "user_users", "users", column: "fuga_id"
-  add_foreign_key "user_users", "users", column: "hoge_id"
 end
